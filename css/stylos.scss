@@ -1,0 +1,137 @@
+
+//variables coloe
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+$butom:hsl(25, 97%, 53%);
+
+//variable cuadrado
+$diametro:35px;
+body{
+    height: 100vh;
+    font-family:"Overpass";
+    background-color: $very-dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: $dark-blue;
+    padding:30px 34px;
+    border-radius:20px ;
+    width: 328px;
+    margin: 0 auto;
+    &--thank{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title{
+        color: $white;
+        font-size: 22px;
+        margin-bottom: 25px;
+        font-weight: 700;
+
+    }
+
+    &__paragraph {
+        
+        color:$light-grey;
+        font-size: 15px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 33px;
+
+        &--thank{
+            text-align: center;
+        }
+    
+    }
+    &__numeros{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__figure{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $diametro;
+        height: $diametro;
+        border-radius: 50%;
+        margin: 0;
+        background-color: lighten($very-dark-blue, $amount: 13.5%);
+    }
+    &__numero{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $diametro;
+        height: $diametro;
+        border-radius: 50%;
+        font-weight: 700;
+        background-color: lighten($very-dark-blue, $amount: 14.5%);
+        color: $light-grey;
+        &:hover{
+            background-color:$butom;
+            color: $white;
+            cursor:pointer;
+        }
+        
+    }
+    &__option{
+        color:$butom;
+        padding:.6em 1.2em;
+        background-color:lighten($dark-blue, $amount: 6.5%);
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    
+
+    &__botom{
+        display:flex;
+        justify-content: center;
+        padding: 1em 0;
+        border-radius: 25px;
+        text-decoration: none;
+        color:$white;
+        text-transform: uppercase;
+        background-color: $butom;
+        margin-top: 26px;
+        
+        &:hover{
+            background-color:$white;
+            color: $butom;
+            //cursor:crosshair;
+        }
+    }
+}
+
+.visible{
+    display: flex;
+}
+.hidden{
+    display: none;
+}
+
+.mensaje__vacio{  
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    color: $butom;
+     
+}
+
+[name="selcirc"] {
+display: none;
+    &:checked + .card__numero{
+    background-color:$medium-grey;
+    color: $white;
+    }
+}
+.attribution{
+    color:$white;
+    display: none;
+}
